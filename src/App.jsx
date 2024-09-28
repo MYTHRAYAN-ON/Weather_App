@@ -379,4 +379,3 @@ const search = async () => {
 }
 
 export default App;
-
