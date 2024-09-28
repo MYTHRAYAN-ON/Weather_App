@@ -126,20 +126,20 @@ const WeatherDetails = ({ icon, temp, city, country, lat, log, humidity, wind, m
     return (
         <div className="main-layout w-full flex flex-col md:flex-row mt-5">
             <div className="left-section p-1 w-full h-full">
-                <div className="date-time-container text-center text-white mb-2 bg-white bg-opacity-10 rounded-lg p-5">
-                    <div className='text-5xl text-iceCold p-2'>{cityTime}</div>
-                    <div className='text-4xl text-freezePurple  p-2'>{cityDate}</div>
+                <div className="date-time-container text-center text-white mb-2 bg-white bg-opacity-10 rounded-lg p-5 w-full h-full">
+                    <div className='lg:text-5xl sm:text-3xl md:text-3xl text-iceCold p-2 '>{cityTime}</div>
+                    <div className='lg:text-3xl sm:text-2xl md:text-xl text-freezePurple  p-2 '>{cityDate}</div>
                 </div>
-                <div className="weatherDetailsContainer text-center text-white bg-white bg-opacity-10 rounded-lg p-5">
+                <div className="weatherDetailsContainer text-center text-white bg-white bg-opacity-10 rounded-lg p-7 mt-2 w-full h-full">
                     <div className="image flex flex-row items-center justify-center">
                         <img src={icon} alt="Weather Icon"/>
                         
                     </div>
-                    <div className="desc text-3xl capitalize text-freezePurple   p-2">{weatherDesc}</div>
+                    <div className="desc text-3xl capitalize text-freezePurple  p-2">{weatherDesc}</div>
                     <div className="temp text-5xl font-bold text-iceCold p-2">{temp}&#8451;</div>
                     <div className="location text-2xl text-mediumPurple p-2">{city}</div>
                     <div className="country text-lg text-freezePurple p-2">{country}</div>
-                    <div className="cord flex justify-between p-2">
+                    <div className="cord flex justify-around p-2">
                         <div className="flex flex-col justify-center items-center">
                             <span className="text-lg text-freezePurple">Latitude</span>
                             <span className="text-xl text-iceCold">{lat}</span>
@@ -153,52 +153,52 @@ const WeatherDetails = ({ icon, temp, city, country, lat, log, humidity, wind, m
             </div>
 
             <div className="right-section p-1 w-full h-full">
-                <div className="sunrise-sunset-container grid grid-cols-2 items-center justify-center gap-5 bg-white bg-opacity-10 rounded-lg p-5 shadow-lg w-full h-full">
-                    <div className="element text-white flex flex-col items-center justify-center">
+                <div className="sunrise-sunset-container grid grid-cols-2 items-center justify-center bg-white bg-opacity-10 rounded-lg p-5 shadow-lg w-full h-full">
+                    <div className="element text-white flex flex-col items-center justify-center ">
                         <img src={sunriseIcon} alt="Sunrise" className='w-16 h-16' />
                         <div className="data text-xl text-iceCold">{sunriseTime}</div>
-                        <div className="text-freezePurple text-lg">Sunrise</div>
+                        <div className="text-freezePurple text-md">Sunrise</div>
                     </div>
                     <div className="element text-white flex flex-col items-center justify-center">
                         <img src={sunsetIcon} alt="Sunset" className='w-16 h-16' />
                         <div className="data text-xl text-iceCold">{sunsetTime}</div>
-                        <div className="text-freezePurple text-lg">Sunset</div>
+                        <div className="text-freezePurple text-md">Sunset</div>
                     </div>
                 </div>
 
 
-                <div className="data-container grid grid-cols-2 gap-5 bg-white bg-opacity-10 rounded-lg p-5 shadow-lg mt-2 w-full ">
+                <div className="data-container grid grid-cols-2 gap-6 bg-white bg-opacity-10 rounded-lg p-5 shadow-lg mt-2 w-full h-full ">
                     
-                    <div className="element text-center text-freezePurple flex flex-col items-center justify-center p-1">
+                    <div className="element text-center text-freezePurple flex flex-col items-center justify-center p-1 ">
                         <img src={maxTempIcon} alt="Max Temperature" className='w-16 h-16'/>
                         <div className="data text-xl text-iceCold">{maxTemp}&#8451;</div>
-                        <div className="text text-lg">Max Temp</div>
+                        <div className="text text-md">Max Temp</div>
                     </div>
-                    <div className="element text-center text-freezePurple flex flex-col items-center justify-center p-1">
+                    <div className="element text-center text-freezePurple flex flex-col items-center justify-center p-1 ">
                         <img src={minTempIcon} alt="Min Temperature" className='w-16 h-16' />
                         <div className="data text-xl text-iceCold">{minTemp}&#8451;</div>
-                        <div className="text text-lg">Min Temp</div>
+                        <div className="text text-md">Min Temp</div>
                     </div>
                     
-                    <div className="element text-center text-freezePurple flex flex-col items-center justify-center ">
+                    <div className="element text-center text-freezePurple flex flex-col items-center justify-center p-1 ">
                         <img src={humidityIcon} alt="Humidity" className='w-16 h-16' />
                         <div className="data text-xl text-iceCold">{humidity}%</div>
-                        <div className="text text-lg">Humidity</div>
+                        <div className="text text-md">Humidity</div>
                     </div>
-                    <div className="element text-center text-freezePurple flex flex-col items-center justify-center">
+                    <div className="element text-center text-freezePurple flex flex-col items-center justify-center p-1">
                         <img src={pressureIcon} alt="Pressure" className='w-16 h-16' />
                         <div className="data text-xl text-iceCold">{pressure} hPa</div>
-                        <div className="text text-lg">Pressure</div>
+                        <div className="text text-md">Pressure</div>
                     </div>
-                    <div className="element text-center text-freezePurple flex flex-col items-center justify-center">
+                    <div className="element text-center text-freezePurple flex flex-col items-center justify-center p-1">
                         <img src={windIcon} alt="Wind" className='w-16 h-16' />
                         <div className="data text-xl text-iceCold">{wind} m/s</div>
-                        <div className="text text-lg">Wind Speed</div>
+                        <div className="text text-md">Wind Speed</div>
                     </div>
-                    <div className="element text-center text-freezePurple flex flex-col items-center justify-center">
+                    <div className="element text-center text-freezePurple flex flex-col items-center justify-center p-1">
                         <img src={windDirectionIcon} alt="Wind" className='w-16 h-16' />
                         <div className="data text-xl text-iceCold">{windDirectionString} </div>
-                        <div className="text text-lg">Wind Direction</div>
+                        <div className="text text-md">Wind Direction</div>
                     </div>
                    
                     
@@ -373,6 +373,7 @@ const search = async () => {
                         
                     />
                 )}
+                <p className='text-lg text-freezePurple p-5 m-5 text-center'>Crafted by <span className='footer-span text-iceCold text-2xl'>Mythrayan</span></p>
             </div>
         </div>
     );
